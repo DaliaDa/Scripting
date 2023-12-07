@@ -1,0 +1,12 @@
+root@ip-172-31-22-94:/opt# chmod +x ./get_global_vars.sh
+root@ip-172-31-22-94:/opt# ./get_global_vars.sh
+root@ip-172-31-22-94:/opt# cat output.txt
+Value of variable: variable name
+region name: eu-central-1
+AZ name: eu-central-1a
+public IP address: 3.79.98.70
+private IP address: 172.31.22.94
+name of instance: Scripting_Dalia
+instance ID: i-023b9098e5062babc
+account number: 823164954914
+root@ip-172-31-22-94:/opt#
