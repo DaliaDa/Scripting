@@ -1,0 +1,66 @@
+#Create EC2 instance in AWS by following instructions:
+#https://rit.accenture.com/batc-confluence/display/DI/AWS+Instance+creation+steps
+
+#Prepare EC2 Instance environment for this task.
+#Install:
+
+sudo apt-get update
+sudo apt install python3-pip
+sudo pip install git-remote-codecommit
+
+pip3 install boto3
+
+#Create directory 
+mkdir Git
+
+#Go in it
+cd Git
+
+#Initialize git
+git init
+
+#Clone repository from CodeCommit
+git clone codecommit::eu-central-1://Dalia-Dauciuniene-skillboost-scripting
+
+cd Dalia-Dauciuniene-skillboost-scripting
+
+#Move .sh and .py files to /ops 
+mv <your directory>/get_global_vars.sh /opt
+mv <your directory>/get_global_vars.py /opt
+
+cd /opt
+
+#Check if both scripts are here
+ls -la
+
+#make Shell script executable:
+chmod +x /opt/get_global_vars.sh
+
+#run it
+./get_global_vars.sh
+
+#check output
+cat output.txt
+
+
+#make Python script executable:
+chmod +x /opt/get_global_vars.py
+
+#run it
+/opt/get_global_vars.py
+
+#check output
+cat output.txt
+
+
+*if script is not running then type this command:
+
+sed -i -e 's/\r$//' get_global_vars.sh
+
+#The reason might be that you saved the file on Windows, 
+#with CR LF as the line ending (\r\n).
+
+
+
+CloudShell
+Feedback
